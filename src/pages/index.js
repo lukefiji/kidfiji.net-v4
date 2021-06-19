@@ -3,6 +3,8 @@ import tw from 'tailwind-styled-components';
 import lfLogo from '../images/luke-fiji-logo.svg';
 import RotatingCube from '../components/RotatingCube';
 import { keyframes, createGlobalStyle } from 'styled-components';
+import contactList from '../constants/contactList';
+import experienceList from '../constants/experienceList';
 import { Helmet } from 'react-helmet';
 
 const PageWrapper = tw.main`
@@ -43,72 +45,51 @@ const ListItem = tw.li`
   mb-6
 `;
 
+const renderLinkList = (items) => (
+  <ul>
+    {items.map(({ title, url }) => (
+      <ListItem key={title}>
+        {url ? <Link href={url}>{title}</Link> : <Paragraph>{title}</Paragraph>}
+      </ListItem>
+    ))}
+  </ul>
+);
+
 // markup
 const IndexPage = () => {
   return (
     <>
-      <Helmet title="Luke Fiji" defer={false} />
-      <PageWrapper>
+      <Helmet defer={false}>
+        <meta charSet="utf-8" />
         <title>Luke Fiji</title>
+        <link rel="canonical" href="https://kidfiji.net" />
+      </Helmet>
 
-        <div>
-          <Container>
-            <Image src={lfLogo} alt="Luke Fiji logo" />
-          </Container>
+      <PageWrapper>
+        <Container>
+          <Image src={lfLogo} alt="Luke Fiji logo" />
+        </Container>
 
-          <Container>
-            <Heading>Hey there, I'm Luke.</Heading>
-            <Paragraph>
-              I'm a curious problem-solver with an eager passion for learning.
-            </Paragraph>
-          </Container>
+        <Container>
+          <Heading>Hey there, I'm Luke.</Heading>
+          <Paragraph>
+            I am a curious problem-solver with an eager passion for learning.
+          </Paragraph>
+        </Container>
 
-          <Container>
-            <Heading>Experience</Heading>
+        <Container>
+          <Heading>Experience</Heading>
 
-            <ul>
-              <ListItem>
-                <Link href="https://www.kbb.com/">Kelley Blue Book</Link>
-              </ListItem>
-              <ListItem>
-                <Link href="https://www.gemfind.com/">GemFind</Link>
-              </ListItem>
-              <ListItem>
-                <Paragraph>RK Tech</Paragraph>
-              </ListItem>
-              <ListItem>
-                <Link href="https://www.ohmanclothing.com/">
-                  Oh Man! Clothing
-                </Link>
-              </ListItem>
-            </ul>
-          </Container>
+          {renderLinkList(experienceList)}
+        </Container>
 
-          <Container>
-            <Heading>Links</Heading>
+        <Container>
+          <Heading>Links</Heading>
 
-            <ul>
-              <ListItem>
-                <Link href="mailto:luke.fiji@gmail.com">Email</Link>
-              </ListItem>
-
-              <ListItem>
-                <Link href="https://www.linkedin.com/in/lukefiji/">
-                  LinkedIn
-                </Link>
-              </ListItem>
-
-              <ListItem>
-                <Link href="https://twitter.com/luke_fiji">Twitter</Link>
-              </ListItem>
-
-              <ListItem>
-                <Link href="https://github.com/lukefiji">GitHub</Link>
-              </ListItem>
-            </ul>
-          </Container>
-        </div>
+          {renderLinkList(contactList)}
+        </Container>
       </PageWrapper>
+
       <RotatingCube />
     </>
   );
