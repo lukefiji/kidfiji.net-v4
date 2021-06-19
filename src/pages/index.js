@@ -45,7 +45,7 @@ const ListItem = tw.li`
   mb-6
 `;
 
-const renderLinkList = (items) => (
+const LinkList = ({ items }) => (
   <ul>
     {items.map(({ title, url }) => (
       <ListItem key={title}>
@@ -55,7 +55,6 @@ const renderLinkList = (items) => (
   </ul>
 );
 
-// markup
 const IndexPage = () => {
   return (
     <>
@@ -80,13 +79,13 @@ const IndexPage = () => {
         <Container>
           <Heading>Experience</Heading>
 
-          {renderLinkList(experienceList)}
+          <LinkList items={experienceList} />
         </Container>
 
         <Container>
           <Heading>Links</Heading>
 
-          {renderLinkList(contactList)}
+          <LinkList items={contactList} />
         </Container>
       </PageWrapper>
 
