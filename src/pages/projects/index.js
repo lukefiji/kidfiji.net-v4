@@ -12,7 +12,10 @@ const ProjectsPage = () => {
     <BaseLayout title="Luke Fiji | Projects">
       <Container>
         <Heading>Projects</Heading>
-        <Paragraph>Coming soon.</Paragraph>
+        <Paragraph>Coming soon</Paragraph>
+        <Paragraph>
+          <Link to="/">Go home</Link>.
+        </Paragraph>
       </Container>
     </BaseLayout>
   );

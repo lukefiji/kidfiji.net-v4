@@ -15,7 +15,7 @@ const NotFoundPage = () => {
         <Heading>Page not found</Heading>
         <Paragraph>Sorry, I couldn’t find what you were looking for.</Paragraph>
         <Paragraph>
-          <Link to="/">Go home</Link>
+          <Link to="/">Go home</Link>.
         </Paragraph>
       </Container>
     </BaseLayout>
