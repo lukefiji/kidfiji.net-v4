@@ -1,4 +1,5 @@
 require('dotenv').config();
+const SITE_ADDRESS = new URL('https://kidifji.net');
 
 module.exports = {
   siteMetadata: {
@@ -21,6 +22,12 @@ module.exports = {
         icon: 'src/images/luke-fiji-logo.png',
       },
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: SITE_ADDRESS.href.slice(0, -1),
+      },
+    },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -35,9 +42,8 @@ module.exports = {
       resolve: `gatsby-plugin-s3`,
       options: {
         bucketName: process.env.S3_BUCKET_NAME,
-        acl: null,
-        // protocol: 'https',
-        // hostname: 'www.kidfiji.net',
+        protocol: SITE_ADDRESS.protocol.slice(0, -1),
+        hostname: SITE_ADDRESS.hostname,
       },
     },
   ],
