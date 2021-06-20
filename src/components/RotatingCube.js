@@ -65,21 +65,24 @@ const RotatingCube = () => {
   const requestRef = React.useRef();
   const previousTimeRef = React.useRef();
 
-  const animate = (time) => {
-    if (previousTimeRef.current !== undefined) {
-      const deltaTime = time - previousTimeRef.current;
+  const animate = React.useCallback(
+    (time) => {
+      if (previousTimeRef.current !== undefined) {
+        const deltaTime = time - previousTimeRef.current;
 
-      setRotationX((prevX) => (prevX + deltaTime * 0.05) % 360);
-      setRotationY((prevY) => (prevY + deltaTime * 0.03) % 360);
-    }
-    previousTimeRef.current = time;
-    requestRef.current = requestAnimationFrame(animate);
-  };
+        setRotationX((prevX) => (prevX + deltaTime * 0.05) % 360);
+        setRotationY((prevY) => (prevY + deltaTime * 0.03) % 360);
+      }
+      previousTimeRef.current = time;
+      requestRef.current = requestAnimationFrame(animate);
+    },
+    [requestRef, previousTimeRef]
+  );
 
   React.useEffect(() => {
     requestRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(requestRef.current);
-  }, []);
+  }, [animate]);
 
   return (
     <CubeContainer>
