@@ -1,9 +1,9 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import tw, { styled } from 'twin.macro';
 
 const VW = 35;
 
-const CubeContainer = styled.div`
+const CubeWrapper = styled.div`
   z-index: -1;
   left: 50%;
   top: 50%;
@@ -38,7 +38,7 @@ const CubeFace = styled.div`
   }
 `;
 
-const CubeSides = [
+const cubeSides = [
   {
     rotation: 'rotateY(0deg)',
   },
@@ -86,17 +86,17 @@ const RotatingCube = () => {
   }, [animate]);
 
   return (
-    <CubeContainer>
+    <CubeWrapper>
       <Cube
         style={{
           transform: `rotateY(${rotationX}deg) rotateX(${rotationY}deg)`,
         }}
       >
-        {CubeSides.map((props) => (
-          <CubeFace {...props}></CubeFace>
+        {cubeSides.map((props) => (
+          <CubeFace {...props} />
         ))}
       </Cube>
-    </CubeContainer>
+    </CubeWrapper>
   );
 };
 

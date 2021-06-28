@@ -26,9 +26,8 @@ export default function BaseLayout({ children, title = 'Luke Fiji' }) {
           <Logo />
         </Container>
         {children}
+        <RotatingCube />
       </PageWrapper>
-
-      <RotatingCube />
     </>
   );
 }

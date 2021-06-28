@@ -2,6 +2,9 @@ require('dotenv').config();
 const SITE_ADDRESS = new URL('https://kidifji.net');
 
 module.exports = {
+  flags: {
+    DEV_SSR: false,
+  },
   siteMetadata: {
     title: 'Luke Fiji',
   },
