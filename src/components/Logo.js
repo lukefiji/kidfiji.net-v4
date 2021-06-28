@@ -4,8 +4,8 @@ import { Link } from 'gatsby';
 
 function Logo() {
   return (
-    <Link to="/">
-      <svg viewBox="0 0 78 78" css={[tw`w-12 md:w-16`]}>
+    <Link to="/" tw="inline-block align-top">
+      <svg viewBox="0 0 78 78" tw="w-12 md:w-16">
         <title>Luke Fiji logo</title>
         <g>
           <path

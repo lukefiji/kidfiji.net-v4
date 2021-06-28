@@ -18,6 +18,13 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-react-helmet-canonical-urls',
+      options: {
+        siteUrl: SITE_ADDRESS.href.slice(0, -1),
+        noTrailingSlash: true,
+      },
+    },
     // 'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -25,12 +32,7 @@ module.exports = {
         icon: 'src/images/luke-fiji-logo.png',
       },
     },
-    {
-      resolve: `gatsby-plugin-canonical-urls`,
-      options: {
-        siteUrl: SITE_ADDRESS.href.slice(0, -1),
-      },
-    },
+
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {

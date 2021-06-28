@@ -11,8 +11,10 @@ export default function BaseLayout({ children, title = 'Luke Fiji' }) {
   return (
     <>
       <Helmet defer={false}>
+        <html lang="en" />
         <meta charSet="utf-8" />
         <title>{title}</title>
+        <meta name="description" content="Luke Fiji - Software Engineer" />
       </Helmet>
 
       <GlobalStyles />
