@@ -1,5 +1,5 @@
 import * as React from 'react';
-import tw, { styled } from 'twin.macro';
+import { styled } from 'twin.macro';
 
 const VW = 35;
 
@@ -92,8 +92,8 @@ const RotatingCube = () => {
           transform: `rotateY(${rotationX}deg) rotateX(${rotationY}deg)`,
         }}
       >
-        {cubeSides.map((props) => (
-          <CubeFace {...props} />
+        {cubeSides.map((props, i) => (
+          <CubeFace {...props} key={i} />
         ))}
       </Cube>
     </CubeWrapper>

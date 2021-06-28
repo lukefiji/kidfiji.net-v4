@@ -13,7 +13,6 @@ export default function BaseLayout({ children, title = 'Luke Fiji' }) {
       <Helmet defer={false}>
         <meta charSet="utf-8" />
         <title>{title}</title>
-        {/* <link rel="canonical" href="https://kidfiji.net" /> */}
       </Helmet>
 
       <GlobalStyles />

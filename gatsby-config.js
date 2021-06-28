@@ -3,7 +3,7 @@ const SITE_ADDRESS = new URL('https://kidifji.net');
 
 module.exports = {
   flags: {
-    DEV_SSR: false,
+    DEV_SSR: true,
   },
   siteMetadata: {
     title: 'Luke Fiji',
