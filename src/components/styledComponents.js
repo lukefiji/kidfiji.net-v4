@@ -1,5 +1,5 @@
 import { Link as GatsbyLink } from 'gatsby';
-import tw from 'tailwind-styled-components';
+import tw from 'twin.macro';
 
 /**
  * Tailwind Breakpoints:
@@ -9,6 +9,12 @@ import tw from 'tailwind-styled-components';
  * xl  : 1280px
  * 2xl : 1536px
  */
+
+const bodyText = `
+  text-primary
+  text-lg
+  lg:text-xl
+`;
 
 export const PageWrapper = tw.main`
   font-sans
@@ -23,11 +29,6 @@ export const Container = tw.div`
   lg:mb-16
 `;
 
-export const Logo = tw.img`
-  w-12
-  md:w-16
-`;
-
 export const Heading = tw.h1`
   font-bold
   text-3xl
@@ -36,22 +37,28 @@ export const Heading = tw.h1`
   mb-4
   md:mb-6
   lg:mb-8
+
+  text-primary
 `;
 
 export const Paragraph = tw.p`
-  text-lg
+  ${bodyText}
   mb-4
   md:mb-6
-  lg:text-xl
 `;
 
 export const ListItem = tw.li`
+  ${bodyText}
   mb-4
   md:mb-6
 `;
 
 export const Link = tw(GatsbyLink)`
-  text-lg
-  lg:text-xl
+  ${bodyText}
+  underline
+`;
+
+export const AnchorLink = tw.a`
+  ${bodyText}
   underline
 `;

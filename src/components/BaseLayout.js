@@ -1,9 +1,11 @@
 import React from 'react';
-import lfLogo from '../images/luke-fiji-logo.svg';
+import { GlobalStyles } from 'twin.macro';
 import { Helmet } from 'react-helmet';
-import { keyframes, createGlobalStyle } from 'styled-components';
+import BaseStyles from '../components/BaseStyles';
+import Logo from '../components/Logo';
 import RotatingCube from './RotatingCube';
-import { PageWrapper, Container, Logo, Link } from './styledComponents';
+import { PageWrapper, Container } from './styledComponents';
+import ThemeToggler from './ThemeToggler';
 
 export default function BaseLayout({ children, title = 'Luke Fiji' }) {
   return (
@@ -14,11 +16,14 @@ export default function BaseLayout({ children, title = 'Luke Fiji' }) {
         {/* <link rel="canonical" href="https://kidfiji.net" /> */}
       </Helmet>
 
+      <GlobalStyles />
+      <BaseStyles />
+
       <PageWrapper>
         <Container>
-          <Link to="/">
-            <Logo src={lfLogo} alt="Luke Fiji logo" />
-          </Link>
+          <ThemeToggler />
+
+          <Logo />
         </Container>
         {children}
       </PageWrapper>

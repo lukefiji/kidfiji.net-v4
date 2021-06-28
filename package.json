@@ -33,13 +33,18 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.3.0"
+    "styled-components": "^5.3.0",
+    "twin.macro": "^2.5.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
     "gatsby-plugin-postcss": "^4.7.1",
     "postcss": "^8.3.2",
-    "tailwind-styled-components": "^2.0.3",
     "tailwindcss": "^2.1.4"
+  },
+  "babelMacros": {
+    "twin": {
+      "preset": "styled-components"
+    }
   }
 }

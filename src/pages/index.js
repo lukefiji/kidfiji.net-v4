@@ -1,10 +1,9 @@
 import * as React from 'react';
-import BaseLayout from '../components/BaseLayout';
 import {
   Container,
   Heading,
   Paragraph,
-  Link,
+  AnchorLink,
   ListItem,
 } from '../components/styledComponents';
 import contactList from '../constants/contactList';
@@ -14,7 +13,11 @@ const LinkList = ({ items }) => (
   <ul>
     {items.map(({ title, url }) => (
       <ListItem key={title}>
-        {url ? <Link to={url}>{title}</Link> : <Paragraph>{title}</Paragraph>}
+        {url ? (
+          <AnchorLink href={url}>{title}</AnchorLink>
+        ) : (
+          <Paragraph>{title}</Paragraph>
+        )}
       </ListItem>
     ))}
   </ul>
@@ -22,7 +25,7 @@ const LinkList = ({ items }) => (
 
 const IndexPage = () => {
   return (
-    <BaseLayout>
+    <>
       <Container>
         <Heading>Hey there, I'm Luke.</Heading>
         <Paragraph>
@@ -41,7 +44,7 @@ const IndexPage = () => {
 
         <LinkList items={contactList} />
       </Container>
-    </BaseLayout>
+    </>
   );
 };
 

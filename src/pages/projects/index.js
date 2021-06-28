@@ -1,5 +1,5 @@
 import * as React from 'react';
-import BaseLayout from '../../components/BaseLayout';
+import Helmet from 'react-helmet';
 import {
   Container,
   Heading,
@@ -9,15 +9,15 @@ import {
 
 const ProjectsPage = () => {
   return (
-    <BaseLayout title="Luke Fiji | Projects">
+    <Helmet title="Luke Fiji | Projects">
       <Container>
         <Heading>Projects</Heading>
         <Paragraph>Coming soon</Paragraph>
         <Paragraph>
-          <Link to="/">Go home</Link>.
+          <Link href="/">Go home</Link>.
         </Paragraph>
       </Container>
-    </BaseLayout>
+    </Helmet>
   );
 };
 

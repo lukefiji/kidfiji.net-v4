@@ -4,7 +4,7 @@
 	 viewBox="0 0 78 78" style="enable-background:new 0 0 78 78;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#1A1A1A;}
-	.st1{fill:#FFFFFF;}
+	.st1{fill:transparent;}
 </style>
 <g id="XMLID_1_">
 	<path id="XMLID_10_" class="st0" d="M0,0v78h78V0H0z M36,55H15V23h6v27h15V55z M62.9,28H47v9h14v5H47v13h-5V23h20.9L62.9,28z"/>

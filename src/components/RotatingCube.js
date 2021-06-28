@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const VW = 35;
 
 const CubeContainer = styled.div`
-  z-index: 10;
+  z-index: -1;
   left: 50%;
   top: 50%;
   transform: translateX(-100%) translateY(-100%);
@@ -26,14 +26,15 @@ const Cube = styled.div`
 
 const CubeFace = styled.div`
   background-color: transparent;
-  border: 12px solid rgba(0, 0, 0, 0.05);
+  border: 12px solid var(--text-primary);
+  opacity: 0.04;
   position: absolute;
   width: ${VW}vw;
   height: ${VW}vw;
   transform: ${({ rotation }) => rotation} translate3d(0, 0, ${VW / 2}vw);
 
   @media (min-width: 576px) {
-    border: 16px solid rgba(0, 0, 0, 0.04);
+    border: 16px solid var(--text-primary);
   }
 `;
 
