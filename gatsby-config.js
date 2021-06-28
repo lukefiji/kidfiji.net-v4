@@ -1,5 +1,5 @@
 require('dotenv').config();
-const SITE_ADDRESS = new URL('https://kidifji.net');
+const SITE_ADDRESS = new URL('https://kidfiji.net');
 
 module.exports = {
   flags: {
@@ -22,7 +22,6 @@ module.exports = {
       resolve: 'gatsby-plugin-react-helmet-canonical-urls',
       options: {
         siteUrl: SITE_ADDRESS.href.slice(0, -1),
-        noTrailingSlash: true,
       },
     },
     // 'gatsby-plugin-sitemap',
