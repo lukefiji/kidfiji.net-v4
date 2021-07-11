@@ -6,6 +6,7 @@ import Logo from '../components/Logo';
 import RotatingCube from './RotatingCube';
 import { PageWrapper, Container } from './styledComponents';
 import ThemeToggler from './ThemeToggler';
+import Particles from './Particles';
 
 export default function BaseLayout({ children, title = 'Luke Fiji' }) {
   return (
@@ -29,6 +30,8 @@ export default function BaseLayout({ children, title = 'Luke Fiji' }) {
         {children}
         <RotatingCube />
       </PageWrapper>
+
+      <Particles />
     </>
   );
 }

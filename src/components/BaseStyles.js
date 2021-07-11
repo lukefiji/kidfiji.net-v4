@@ -1,24 +1,25 @@
 import tw from 'twin.macro';
 import { createGlobalStyle } from 'styled-components';
 import defaultTheme from 'tailwindcss/defaultTheme';
+import theme from '../constants/theme';
 
 const BaseStyles = createGlobalStyle`
   .light {
-    --bg-primary: ${defaultTheme.colors.gray[50]};
-    --bg-secondary: ${defaultTheme.colors.gray[50]};
-    --text-primary: ${defaultTheme.colors.gray[800]};
-    --text-secondary: ${defaultTheme.colors.gray[800]};
-    --color-primary: #E11D48;
-    --bg-effect-color: ${defaultTheme.colors.gray[800]};
+    --bg-primary: ${theme.colors.offWhite};
+    --bg-secondary: ${theme.colors.offWhite};
+    --text-primary: ${theme.colors.darkGray};
+    --text-secondary: ${theme.colors.darkGray};
+    --color-primary: ${theme.colors.red};
+    --bg-effect-color: ${theme.colors.darkGray};
   }
   
   .dark {
-    --bg-primary: ${defaultTheme.colors.gray[800]};
-    --bg-secondary: ${defaultTheme.colors.gray[800]};
-    --text-primary: ${defaultTheme.colors.gray[200]};
-    --text-secondary: ${defaultTheme.colors.gray[200]};
-    --color-primary: #2563EB;
-    --bg-effect-color: ${defaultTheme.colors.gray[200]};
+    --bg-primary: ${theme.colors.darkGray};
+    --bg-secondary: ${theme.colors.darkGray};
+    --text-primary: ${theme.colors.lightGray};
+    --text-secondary: ${theme.colors.lightGray};
+    --color-primary: ${theme.colors.blue};
+    --bg-effect-color: ${theme.colors.lightGray};
   }
 
   body {
